@@ -17,7 +17,7 @@ if os.path.exists(filename):
 else:
     raise FileNotFoundError(f"Le fichier {filename} n'existe pas.")
 
-# Initialiser des listes pour les positions et pressions
+# Initialiser des listes pour les positions et des nombres de Nusselt
 # position = R/D
 # Nu_adim = Nu/(Re**0.7)
 position_adim_1 = []
@@ -82,8 +82,6 @@ Nu_simu_adim_ines = [Nu_simu_ines[i]/(Re**0.7) for i in range(len(Nu_simu_ines))
 position_adim_ines = [position_ines[i]/D for i in range(len(position_ines))]
 
 
-
-
 # Lire les lignes du fichier
 filename = "surface_total_heat_flux_outflow.xy"
 
@@ -132,8 +130,7 @@ plt.title("Profil de Nu adimensionné en fonction de la position adimensionnée"
 plt.grid()
 plt.legend()
 plt.savefig("lr-nuss-simu-nous.png")
-plt.show()
 
 
-#turbulent kinetic energy 0.02535
-#turbulent dissipation rate 0.4567
+#turbulent kinetic energy 0.0002535
+#turbulent dissipation rate 0.0004567
